@@ -1,0 +1,71 @@
+{
+    "name": "react-package-typescript",
+    "version": "1.0.0",
+    "description": "React Package Template in Typescript",
+    "main": "dist/index.js",
+    "scripts": {
+        "lint": "eslint src/** --ext .ts,.tsx,.js,.jsx",
+        "lint:fix": "yarn lint --fix",
+        "test": "jest --verbose",
+        "test:watch": "jest --watchAll --verbose",
+        "test:coverage": "jest --verbose --coverage",
+        "build": "yarn clean && ./node_modules/typescript/bin/tsc",
+        "clean": "rm -rf ./dist"
+    },
+    "author": "Mattias Singmyr <mattias@singmyr.io>",
+    "license": "MIT",
+    "devDependencies": {
+        "@types/enzyme": "^3.9.2",
+        "@types/enzyme-adapter-react-16": "^1.0.5",
+        "@types/jest": "^24.0.13",
+        "@types/react": "^16.8.17",
+        "@types/react-dom": "^16.8.4",
+        "@typescript-eslint/eslint-plugin": "^1.9.0",
+        "@typescript-eslint/parser": "^1.9.0",
+        "enzyme": "^3.9.0",
+        "enzyme-adapter-react-16": "^1.13.1",
+        "eslint": "^5.16.0",
+        "eslint-config-prettier": "^4.3.0",
+        "eslint-plugin-prettier": "^3.1.0",
+        "eslint-plugin-react": "^7.13.0",
+        "husky": ">=1",
+        "jest": "^24.8.0",
+        "lint-staged": ">=8",
+        "prettier": "^1.17.1",
+        "react": "^16.8.6",
+        "react-dom": "^16.8.6",
+        "typescript": "^3.4.5"
+    },
+    "jest": {
+        "setupFilesAfterEnv": [
+            "<rootDir>/test-shim.js",
+            "<rootDir>/test-setup.js"
+        ],
+        "moduleFileExtensions": [
+            "ts",
+            "tsx",
+            "js",
+            "jsx"
+        ],
+        "transform": {
+            "^.+\\.(ts|tsx)$": "<rootDir>/test-preprocessor.js"
+        },
+        "testMatch": [
+            "**/__tests__/*.(ts|tsx|js|jsx)"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "jest && lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.{js,jsx,ts,tsx}": [
+            "eslint --fix",
+            "git add"
+        ]
+    },
+    "ignore": [
+        "dist/**.js"
+    ]
+}
