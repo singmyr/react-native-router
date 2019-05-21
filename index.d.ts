@@ -1,13 +1,14 @@
 import * as React from 'react';
 
-export interface HelloWorldProps extends React.Props<HelloWorld> {
-  color: string;
-}
+declare const NavigationProvider;
+declare const withNavigation;
+declare const ScreenRenderer;
+// export interface HelloWorldProps extends React.Props<HelloWorld> {
+//   color: string;
+// }
 
-declare class HelloWorld extends React.Component<HelloWorldProps, any> {
-}
+// declare class HelloWorld extends React.Component<HelloWorldProps, any> {
+// }
 
-declare module 'hello-world' {
+declare module 'react-native-router' {
 }
-
-export default HelloWorld;

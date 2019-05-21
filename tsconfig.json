@@ -8,7 +8,7 @@
     "removeComments": true,
     "declaration": false,
     "sourceMap": true,
-    "jsx": "react",
+    "jsx": "react-native",
     "typeRoots": [
       "index.d.ts",
       "node_modules/@types"

@@ -1,5 +1,5 @@
 {
-    "name": "react-package-typescript",
+    "name": "react-native-router",
     "version": "1.0.0",
     "description": "React Package Template in Typescript",
     "main": "dist/index.js",
